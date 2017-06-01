@@ -12,3 +12,7 @@ before_install:
 script:
   - echo {} > .github.json
   - ./node_modules/.bin/grunt pre-commit
+
+branches:
+   except:
+      - refactoring
