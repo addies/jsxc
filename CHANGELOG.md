@@ -4,128 +4,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## 3.4.1 - 2018-07-05
-### Fixed
-- match all geo urls
-- [#705](https://github.com/jsxc/jsxc/issues/705) display http upload preview in muc
+## [Unreleased]
+- OMEMO
+- video calls in all tabs
+- [#328](https://github.com/jsxc/jsxc/issues/328) MUC joining from any tab
+- [#501](https://github.com/jsxc/jsxc/issues/501) support JID escaping (XEP-0106)
+- fix and improve emoticon insertion
+- add muc invitation
+    - [#341](https://github.com/jsxc/jsxc/issues/341) mediated invitation
+    - direct invitation (XEP-0249)
+- display muc subject in window header
+- remove nonpersistent contacts after login
+- [#6](https://github.com/jsxc/jsxc/issues/6) add voice only call
+- add fullscreen layout
+- translate OTR status messages
+- use Consistent Color Generation (XEP-0392)
+- use more naturally bounce animation for notice
+- display presence messages
 
-## 3.4.0 - 2018-05-23
-### Added
-- add option to send current location
-- add czech translation
+### Developer notes
+- Typescript, Webpack, Handlebars, Karma, Mocha, Chai and Sinon
+- remove `build` folder, git submodules, bower and grunt
+- share one XMPP connection across all tabs
+- add plugin API
 
-### Fixed
-- [#646](https://github.com/jsxc/jsxc/issues/646) fix locales with country code
-- [#672](https://github.com/jsxc/jsxc/issues/672) fix input resize for pasting
-
-### Changed
-- update locales
-- update dependencies
-
-## 3.3.2 - 2017-11-29
-### Fixed
-- [#521](https://github.com/jsxc/jsxc/issues/521) concatenate files for dsa webworker to bypass strict csp
-- [#621](https://github.com/jsxc/jsxc/issues/621) disable draggable video element
-- [#644](https://github.com/jsxc/jsxc/issues/644) update strophejs; support utf passwords
-- [#643](https://github.com/jsxc/jsxc/issues/643) fix external service discovery
-
-### Changed
-- Chinese translation
-
-## 3.3.1 - 2017-10-20
-### Fixed
-- [#613](https://github.com/jsxc/jsxc/issues/613) fix online status for cached rosters
-- [#616](https://github.com/jsxc/jsxc/issues/616) handle connection failure with login box
-- clean up login box handler
-- [#618](https://github.com/jsxc/jsxc/issues/618) fix scrollable window height
-- [#618](https://github.com/jsxc/jsxc/issues/618) limit number of received mam messages to 30
-- include reason for connection failure on event
-- [#628](https://github.com/jsxc/jsxc/issues/628) fix broken otr submodule entry
-- reset restore state after logout
-- [#615](https://github.com/jsxc/jsxc/issues/615) add storage cleaner migration step
-- [#602](https://github.com/jsxc/jsxc/issues/602) prevent multiple connections with jsxc.start
-
-## 3.3.0 - 2017-08-25
-### Added
-- api to retrieve last message
-- [#567](https://github.com/jsxc/jsxc/issues/567) add external service discovery for ice server retrieval
-- [#574](https://github.com/jsxc/jsxc/issues/574) add automatic login
-- add debugging api
-- add Japanese
-- support mam:1
-
-### Fixed
-- fix unlimited max size for http file upload
-- [#552](https://github.com/jsxc/jsxc/issues/552) fix muc selection dialog
-- [#569](https://github.com/jsxc/jsxc/issues/569) fix uncaught type error
-- [#588](https://github.com/jsxc/jsxc/issues/588) fix calculation of capability hash
-- reset http upload settings for new connection
-- test for valid jid on roster response
-- ignore roster pushes with no or more than one item element
-
-### Changed
-- [#473](https://github.com/jsxc/jsxc/issues/473),[#555](https://github.com/jsxc/jsxc/issues/555),[#593](https://github.com/jsxc/jsxc/issues/593) update strophe.jinglejs
-- [#591](https://github.com/jsxc/jsxc/issues/591) update strophe.disco.js
-- update jsxc emoticon
-- update locales
-- [#597](https://github.com/jsxc/jsxc/pull/597) include jid in chat window title
-- more restrictive xml body query
-
-## 3.2.1 - 2017-06-01
-### Added
-- add Greek translation
-
-### Fixed
-- fix thumbnail transfer
-- fix handler for muc menu items
-- catch undefined exception during file transfer
-- fix disabled file transfer link
-- [#542](https://github.com/jsxc/jsxc/issues/542) fix fallback language
-- remove favicon badge after logout
-
-### Changed
-- reduce thumbnail size
-- enable http upload for muc
-- disable links in last message view
-
-## 3.2.0 - 2017-05-17
-### Added
-- [#150](https://github.com/jsxc/jsxc/issues/150) add Message Archive Management (XEP-0313)
-- [#464](https://github.com/jsxc/jsxc/issues/464) respond to software version request (XEP-0092)
-
-### Fixed
-- [#447](https://github.com/jsxc/jsxc/pull/447) fix muc member presence
-- fix http upload discovery
-- fix vcard retrieval for rooms
-- fix bookmarks
-- [#470](https://github.com/jsxc/jsxc/issues/470) fix receiving message from unknown sender
-- [#483](https://github.com/jsxc/jsxc/issues/483) fix unclickable space
-- catch quota exceeded errors (e.g. Safari in private mode has a quota of 0)
-- [#510](https://github.com/jsxc/jsxc/pull/510) fix muc form
-- [#505](https://github.com/jsxc/jsxc/pull/505) fix i18n key
-- [#515](https://github.com/jsxc/jsxc/issues/515) fix add contact in slave tab
-- fix initial roster loading
-- fix xmpp message uri to unknown jid
-- fix uri scheme handling if offline
-- fix hiding of offline users in roster
-
-### Changed
-- update dependencies
-   - strophe.jinglejs
-   - grunt-contrib-clean
-   - grunt-contrib-uglify
-   - node-sass
-   - strophe.chatstates
-   - strophejs-plugin-mam
-- make max file size optional for http upload service
-- [#480](https://github.com/jsxc/jsxc/issues/480) split avatar loading into chunks
-- [#478](https://github.com/jsxc/jsxc/issues/478) support roster versioning
-- prefer xmpp password from settings over login form
-- [#468](https://github.com/jsxc/jsxc/issues/468) move composing message to window header
-- make message error more visible
-- ignore message errors without id
-- add data-bid to xmpp uris
-- add roster state to roster ready event
+### Removed/Pending
+- jingle file transfer
+- bookmarks
+- screen sharing
 
 ## 3.1.1 - 2017-02-14
 ### Fixed
